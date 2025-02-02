@@ -1,0 +1,60 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0fff0, #ccffd1);
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 700px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.video-feed {
+    
+    display: inline-block;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 8px;
+}
+
+.button {
+    background-color: #2e7d32;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #1b5e20;
+}

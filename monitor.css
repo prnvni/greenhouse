@@ -1,0 +1,309 @@
+
+/* .bebas-neue-regular {
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-style: normal;
+  } */
+
+  @font-face {
+    font-family: 'Samsung Sharp Sans';
+    src: url('samsungsharpsans-bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  .box, .temperature, .humidity, .light, .density {
+    background-color: #61a1937c; /* Same color applied to all these boxes */
+}
+
+  body {
+    
+    /* background: linear-gradient(#049c37 45%, #000000); */
+    background: linear-gradient( #033813e1 35%, #6ea56a);
+    height: 100vh; /* Set height to 100% of the viewport */
+    margin: 0; /* Remove any default margin */
+    padding-bottom: 300px;
+    color: white;
+    position: relative;
+    text-align: center;
+    font-size: 40px; /* Reduced font size for better fit */
+    font-family: 'Samsung Sharp Sans',sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+.container {
+    padding: 20px; /* Reduced padding for better fit */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px; /* Reduced gap */
+    max-width: 1200px; /* Ensure grid doesn’t stretch too wide */
+    width: 100%;
+}
+
+.box {
+
+    padding: 15px 10px 30px 30px; /* Reduced padding */
+    border-radius: 40px; /* Smaller border radius for a sleeker look */
+    font-size: 30px; /* Reduced font size */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.089);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* height: 300px;  */
+    overflow: hidden; /* Hide overflow */
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Reduced gap */
+    width: 100%;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.box img {
+    width: 80px; /* Adjust icon size */
+    height: auto;
+    margin-bottom: 0; /* Remove excessive margin */
+    position: static; /* Remove absolute positioning */
+}
+
+.temperature {  
+    padding-right:40px;
+
+}  /* Green */
+
+.temperature p{
+    position: relative;
+    top:17px;
+}
+.temp-bar-container {
+    width: 100%;
+    height: 30px; /* Thickness of the bar */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background */
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 30px;
+    
+    
+}
+
+.temp-bar {
+    height: 100%;
+    width: 0%; /* Will be updated dynamically */
+    background: linear-gradient(90deg, #2196F3, #FF9800, #FF0000); /* Blue → Orange → Red */
+    transition: width 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+.temperature .content img {
+    width: 50px; /* Adjust icon size */
+}
+
+
+.humidity .content {
+    font-size: 40px; /* Adjust text size */
+    align-items: center;
+    
+}
+
+.humidity .content img {
+    width: 60px; /* Adjust icon size */
+}
+
+
+.humidity { 
+    padding-right: 40px;
+} 
+
+.humidity-bar-container {
+    width: 100%;
+    height: 30px; /* Same thickness as temp bar */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background */
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.humidity-bar {
+    height: 100%;
+    width: 0%; /* Will be updated dynamically */
+    background: linear-gradient(90deg, #0024d7, #00c3ff); /* Aqua → Teal */
+    transition: width 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+
+
+.light { 
+    padding-right:40px;
+
+}  /* Yellow */
+.light-intensity-container {
+    text-align: center;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.light-bar-container {
+    width: 100%;
+    height: 30px; /* Height of the bar */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background for the bar */
+    border-radius: 5px;
+    /* margin: 20px auto; */
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.light .content img {
+    width: 55px; /* Adjust icon size */
+}
+
+.light-bar {
+    height: 100%;
+    width: 0%; /* Will be updated dynamically */
+    background:#ece144;
+    /* background: linear-gradient(90deg, #ffeb3b, #ff9800); Yellow → Orange gradient */
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* #light-value {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} */
+
+
+
+
+.density { 
+    padding-right: 40px;  /* Similar padding as the light bar */
+}
+
+.density .content {
+    font-size: 40px; /* Adjust text size */
+    align-items: center;
+    text-align: center;
+}
+
+.density .content img {
+    width: 70px; /* Adjust icon size */
+}
+
+.density-bar-container {
+    width: 100%;
+    height: 30px; /* Same height as light bar */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background for the bar */
+    border-radius: 5px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.density-bar {
+    height: 100%;
+    width: 0%; /* Will be updated dynamically */
+    /* background: linear-gradient(90deg, #044d14, #38cd07);  */
+    background: linear-gradient(90deg,#1c6820, #44a949, #76dd00);
+
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 125px;
+    height: 50px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 42px;
+    width: 46px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.switch-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    pointer-events: none; /* Prevents clicks */
+}
+
+/* OFF text (left side) */
+.switch-label.off {
+    right: 20px;
+    opacity: 1;
+}
+
+/* ON text (right side) */
+.switch-label.on {
+    left: 17px;
+    opacity: 1; /* Hidden by default */
+}
+
+/* When toggled ON */
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider::before {
+    transform: translateX(70px);
+}
+
+/* Show the "ON" text and hide "OFF" when toggled */
+input:checked + .slider + .switch-label.on {
+    opacity: 1;
+}
+
+input:checked + .slider + .switch-label.off {
+    opacity: 0;
+}
